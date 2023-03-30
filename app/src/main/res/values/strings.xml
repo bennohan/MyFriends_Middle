@@ -1,5 +1,31 @@
 <resources>
     <string name="app_name">My Friends</string>
     <string name="mustFill">Wajib Diisi</string>
+    <string name="friends_kosong">Friends Kosong</string>
+    <string name="search_your_friends">Search Your Friends</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="masukan_nama_anda">Masukan Nama Anda</string>
+    <string name="phone">Phone</string>
+    <string name="masukan_nomor_telephone_anda">Masukan Nomor Telephone Anda</string>
+    <string name="masukan_password_anda">Masukan Password Anda</string>
+    <string name="password">Password</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="button_back">Button Back</string>
+    <string name="school">School</string>
+    <string name="description">Description</string>
+    <string name="app_logo">App Logo</string>
+    <string name="welcome_to_my_friends">Welcome To My Friends</string>
+    <string name="login">Login</string>
+    <string name="masukan_nomor_telephone">Masukan Nomor Telephone</string>
+    <string name="masukan_password">Masukan Password</string>
+    <string name="hello_there_please_login_to_continue">Hello There , Please Login to continue</string>
+    <string name="menu_button">Menu Button</string>
+    <string name="button_logout">Button Logout</string>
+    <string name="masukan_deskripsi">Masukan Deskripsi</string>
+    <string name="favourite_image">Favourite Image</string>
+    <string name="nice_to_see_you">Nice to See You</string>
+    <string name="buttonfavourite">buttonFavourite</string>
 
 </resources>

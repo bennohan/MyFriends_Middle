@@ -14,14 +14,27 @@ class ViewBindingHelper {
 
             view.setImageDrawable(null)
 
-            imageUrl?.let {
+            if (imageUrl.isNullOrEmpty()) {
                 Glide
                     .with(view.context)
-                    .load(imageUrl)
+                    .load(R.drawable.ic_baseline_person_24)
                     .placeholder(R.drawable.ic_baseline_person_24)
-//                    .apply(RequestOptions.circleCropTransform())
+                    .apply(RequestOptions.centerCropTransform())
 //                    .error(R.drawable.error)
                     .into(view)
+
+
+            } else {
+                imageUrl.let {
+                    Glide
+                        .with(view.context)
+                        .load(imageUrl)
+                        .placeholder(R.drawable.ic_baseline_person_24)
+            //                    .apply(RequestOptions.circleCropTransform())
+            //                    .error(R.drawable.error)
+                        .into(view)
+
+                }
 
             }
 

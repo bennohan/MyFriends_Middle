@@ -38,5 +38,5 @@ data class User(
     val totalLike: Int,
     @Expose
     @SerializedName("like_by_you")
-    val likeByYou: String?,
+    val likeByYou: Boolean?,
 ) : Parcelable

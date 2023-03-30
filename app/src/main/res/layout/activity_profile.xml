@@ -25,6 +25,7 @@
 
 
             <ImageButton
+                android:contentDescription="@string/button_back"
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,19 +35,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btnEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/circleImageView"
                 imageUrlCircle='@{user.photo}'
+                android:contentDescription="@string/profile_image"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_90sdp"
                 android:layout_marginTop="@dimen/_25sdp"
@@ -64,9 +57,10 @@
             android:id="@+id/cardView"
             android:layout_width="@dimen/_280sdp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
             android:orientation="vertical"
             app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,14 +69,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/_10sdp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
-                    android:text="Name"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/name"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
@@ -90,7 +84,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_marginStart="16dp"
                     android:text='@{user.name}'
                     android:textSize="@dimen/_21sdp"
                     tools:text="Person Name" />
@@ -98,8 +92,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
-                    android:text="Phone"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/phone"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
@@ -107,7 +102,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_marginStart="16dp"
                     android:text='@{user.phone}'
                     android:textSize="@dimen/_21sdp"
                     tools:text="Person Name" />
@@ -115,8 +110,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
-                    android:text="School"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/school"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
@@ -124,7 +120,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_marginStart="16dp"
                     android:text='@{user.school}'
                     android:textSize="@dimen/_21sdp"
                     tools:text="Person Name" />
@@ -132,8 +128,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
-                    android:text="Description"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/description"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
@@ -141,10 +138,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
+                    android:layout_marginStart="16dp"
                     android:text='@{user.description}'
                     android:textSize="@dimen/_21sdp"
                     tools:text="Person Name" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:text="@string/edit_profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_border"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
 
             </LinearLayout>

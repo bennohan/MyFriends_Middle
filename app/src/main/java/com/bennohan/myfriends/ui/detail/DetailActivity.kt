@@ -1,6 +1,5 @@
 package com.bennohan.myfriends.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bennohan.myfriends.R
 import com.bennohan.myfriends.base.BaseActivity
@@ -11,7 +10,8 @@ import com.crocodic.core.extension.tos
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailActivity : BaseActivity<ActivityDetailBinding,DetailViewModel>(R.layout.activity_detail) {
+class DetailActivity :
+    BaseActivity<ActivityDetailBinding, DetailViewModel>(R.layout.activity_detail) {
 
     private var friends: User? = null
 
@@ -21,23 +21,24 @@ class DetailActivity : BaseActivity<ActivityDetailBinding,DetailViewModel>(R.lay
 
         getData()
 
-
-
         binding.btnBack.setOnClickListener {
             onBackPressed()
         }
 
         binding.btnFav.setOnClickListener {
-            tos("Friends Liked")
             val userLike = friends?.id
+            val like = friends?.likeByYou
+            if (like == true) {
+                tos("Friends Disliked")
+//                binding.btnFav.setBackground(getDrawable(R.drawable.ic_baseline_favorite_24))
+
+            } else {
+                tos("Friends Liked")
+            }
             viewModel.favourite(userLike ?: return@setOnClickListener)
+            setResult(Cons.FRIENDS.RELOAD)
         }
 
-//        binding.btnUnFav.setOnClickListener {
-//            tos("Friends Disliked")
-//            val userLike = friends?.id
-//            viewModel.favourite(userLike ?: return@setOnClickListener)
-//        }
 
     }
 

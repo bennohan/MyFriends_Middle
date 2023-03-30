@@ -14,7 +14,6 @@ interface UserDao : CoreDao<User> {
     @Query("SELECT * FROM User WHERE idRoom = 1 ")
     suspend fun getId() : User
 
-
     @Query("SELECT * FROM User WHERE idRoom = 1 ")
     fun getUser() : LiveData<User>
 

@@ -1,7 +1,6 @@
 package com.bennohan.myfriends.ui.editProfile
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -10,16 +9,12 @@ import android.graphics.Matrix
 import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
@@ -30,8 +25,6 @@ import com.bennohan.myfriends.base.BaseActivity
 import com.bennohan.myfriends.database.UserDao
 import com.bennohan.myfriends.databinding.ActivityEditBinding
 import com.bennohan.myfriends.ui.login.LoginActivity
-import com.bennohan.myfriends.ui.profile.ProfileActivity
-import com.bennohan.myfriends.ui.profile.ProfileViewModel
 import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.snacked
@@ -104,7 +97,6 @@ class EditActivity : BaseActivity<ActivityEditBinding, EditViewModel>(R.layout.a
                             ApiStatus.SUCCESS -> {
                                 tos(it.message ?: "Berhasil Update Profile")
                                 loadingDialog.dismiss()
-                                openActivity<ProfileActivity>()
                                 finish()
                             }
                             ApiStatus.ERROR -> {

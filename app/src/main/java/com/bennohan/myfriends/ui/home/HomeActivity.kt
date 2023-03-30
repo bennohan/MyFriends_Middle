@@ -6,12 +6,10 @@ import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
-import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.bennohan.myfriends.ui.profile.ProfileActivity
 import com.bennohan.myfriends.R
 import com.bennohan.myfriends.base.BaseActivity
 import com.bennohan.myfriends.database.Cons
@@ -20,9 +18,9 @@ import com.bennohan.myfriends.database.UserDao
 import com.bennohan.myfriends.databinding.ActivityHomeBinding
 import com.bennohan.myfriends.databinding.ItemFriendsBinding
 import com.bennohan.myfriends.ui.detail.DetailActivity
+import com.bennohan.myfriends.ui.profile.ProfileActivity
 import com.crocodic.core.base.adapter.CoreListAdapter
 import com.crocodic.core.extension.openActivity
-import com.crocodic.core.extension.tos
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -53,6 +51,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
             search()
         }
 
+        binding.btnMenu.setOnClickListener {
+            openActivity<ProfileActivity>()
+        }
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

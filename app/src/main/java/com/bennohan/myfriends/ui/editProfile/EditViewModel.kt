@@ -38,7 +38,7 @@ class EditViewModel @Inject constructor(
                     val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
                     _apiResponse.send(ApiResponse().responseSuccess("Sukses"))
                     userDao.insert(data.copy(idRoom = 1))
-
+//                    userDao.update(User(0, idUser ,name , school , description))
                     _apiResponse.send(ApiResponse().responseSuccess("Profile Updated"))
                 }
                 override suspend fun onError(response: ApiResponse) {
@@ -66,6 +66,7 @@ class EditViewModel @Inject constructor(
 
                     _apiResponse.send(ApiResponse().responseSuccess("Profile Updated"))
                     userDao.insert(data.copy(idRoom = 1))
+
 
                 }
                 override suspend fun onError(response: ApiResponse) {

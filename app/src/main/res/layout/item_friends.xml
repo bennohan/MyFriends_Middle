@@ -35,59 +35,52 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:contentDescription="@string/profile_image"
                 imageUrl='@{data.photo}'
-                app:layout_constraintTop_toTopOf="parent"
-                android:visibility='@{data.photo == null ? View.GONE :View.VISIBLE}' />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:src="@drawable/ic_baseline_person_24"
-                android:visibility='@{data.photo == null ? View.VISIBLE :View.GONE}'
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             </FrameLayout>
 
+
+            <!--            <TextView-->
+<!--                android:id="@+id/tvSchool"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text='@{data.school}'-->
+<!--                android:textSize="@dimen/_10sdp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tvPhone"-->
+<!--                tools:text="School" />-->
 
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:minLines="1"
                 android:text='@{data.name}'
                 android:textColor="@color/black"
-                android:textSize="@dimen/_20sdp"
-                android:gravity="center"
-                android:minLines="1"
-                android:maxLines="1"
+                android:textSize="@dimen/_16sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout"
                 tools:text="My Name" />
 
             <TextView
-                android:id="@+id/tvSchool"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text='@{data.school}'
-                android:textSize="@dimen/_16sdp"
-                android:gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPhone"
-                tools:text="School" />
-
-            <TextView
                 android:id="@+id/tvPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text='@{data.phone}'
                 android:gravity="center"
-                android:textSize="@dimen/_15sdp"
+                android:text='@{data.phone}'
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvName"
@@ -98,9 +91,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/favourite_image"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/ic_baseline_favorite_24"
-                android:visibility='@{data.likeByYou == "true" ? View.VISIBLE : View.GONE}'
+                android:visibility='@{data.likeByYou == true ? View.VISIBLE : View.GONE}'
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

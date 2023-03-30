@@ -26,6 +26,7 @@
 
             <ImageButton
                 android:id="@+id/btnBack"
+                android:contentDescription="@string/button_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
+                android:contentDescription="@string/button_logout"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_baseline_logout_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,7 @@
                 android:layout_height="@dimen/_90sdp"
                 android:layout_marginTop="@dimen/_25sdp"
                 android:layout_marginEnd="144dp"
+                android:contentDescription="@string/profile_image"
                 android:layout_marginBottom="@dimen/_10sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
-                    android:text="Name"
+                    android:text="@string/name"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp" />
 
@@ -102,14 +105,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
-                    android:hint=" Masukan Nama Anda "
+                    android:hint="@string/masukan_nama_anda"
                     android:text='@{user.name}' />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
-                    android:text="School"
+                    android:text="@string/school"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp" />
 
@@ -119,14 +122,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
-                    android:hint=" Masukan Nomor telphone anda"
+                    android:hint="@string/masukan_nomor_telephone_anda"
                     android:text='@{user.school}' />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_8sdp"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp" />
 
@@ -136,16 +139,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
-                    android:hint="Masukan Deskripsi"
+                    android:hint="@string/masukan_deskripsi"
                     android:text='@{user.description}' />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnEdit"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_8sdp"
-                    android:backgroundTint="#130CB7"
-                    android:text="Edit Profile" />
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:background="@drawable/button_border"
+                    android:text="@string/edit_profile" />
 
             </LinearLayout>
 

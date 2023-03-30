@@ -29,7 +29,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             ) {
                 return@setOnClickListener
             }
-            tos("button work")
             val phone = binding.etPhone.textOf()
             val password = binding.etPassword.textOf()
 
@@ -52,7 +51,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         when (it.status) {
                             ApiStatus.LOADING -> loadingDialog.show("login")
                             ApiStatus.SUCCESS -> {
-                                tos(it.message ?: "sukses")
+                                tos(it.message ?: "login Success")
                                 loadingDialog.dismiss()
                                 openActivity<HomeActivity>()
                                 finish()

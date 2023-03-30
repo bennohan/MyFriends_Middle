@@ -9,5 +9,6 @@ object Cons {
     }
     object FRIENDS {
         const val FRIENDS = "friends"
+        const val RELOAD = 876
     }
 }

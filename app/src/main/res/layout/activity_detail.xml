@@ -29,6 +29,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
+                android:contentDescription="@string/button_back"
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,16 +39,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btnFav"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:src='@{data.likeByYou == "true" ? @drawable/ic_baseline_favorite_24 : @drawable/ic_baseline_favorite_border_24}'
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                        <ImageButton
+                            android:contentDescription="@string/buttonfavourite"
+                            android:id="@+id/btnFav"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:src='@{data.likeByYou ? @drawable/ic_baseline_favorite_border_24 :  @drawable/ic_baseline_favorite_24}'
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
+<!--            <ImageButton-->
+<!--                android:id="@+id/btnFav"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:src="@drawable/ic_baseline_favorite_24"-->
+<!--                android:visibility='@{data.likeByYou ? View.VISIBLE : View.GONE}'-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <de.hdodenhof.circleimageview.CircleImageView
                 imageUrl='@{data.photo}'
@@ -79,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
-                    android:text="Name"
+                    android:text="@string/name"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold"
@@ -93,6 +105,7 @@
                     android:layout_marginStart="16dp"
                     android:text='@{data.name}'
                     android:textSize="@dimen/_20sdp"
+                    android:textColor="#2B2A2A"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvName"
                     tools:text="Person Name" />
@@ -103,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="Phone"
+                    android:text="@string/phone"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold"
@@ -117,6 +130,7 @@
                     android:layout_marginStart="16dp"
                     android:text='@{data.phone}'
                     android:textSize="@dimen/_20sdp"
+                    android:textColor="#2B2A2A"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvPhone"
                     tools:text="0906840" />
@@ -127,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="School"
+                    android:text="@string/school"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold"
@@ -141,6 +155,7 @@
                     android:layout_marginStart="16dp"
                     android:text='@{data.school}'
                     android:textSize="@dimen/_20sdp"
+                    android:textColor="#2B2A2A"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvSchool"
                     tools:text="High School" />
@@ -151,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold"
@@ -165,6 +180,7 @@
                     android:layout_marginBottom="20dp"
                     android:text='@{data.description}'
                     android:textSize="@dimen/_20sdp"
+                    android:textColor="#2B2A2A"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvDescription"
